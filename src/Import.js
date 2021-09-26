@@ -13,6 +13,7 @@ function Import(props) {
 
         function submitNow(event){
             event.preventDefault();
+            //create a document for the new prank in the pranks collection
             db.collection("pranks").doc(`${length}`).set({
                 link: input,
                 rating: 0,

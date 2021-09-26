@@ -15,7 +15,8 @@ import {
 
 function Main(props) {
 
-
+    /*startMash function is used to shuffle the array of pranks when route changes or reloads
+    or new prank is imported*/
     const startMash = (event) => {
       // event.preventDefault();
       props.addPrank(shuffle(props.prankArr))
@@ -24,7 +25,8 @@ function Main(props) {
     return(
         <Router>
           <Switch>
-                <Route path="/admin_panel">
+                <Route path="/admin_panel"> 
+                {/* allowing admin to import new pranks into database */}
                   <div className = "Form">
                     <div className="importForm">
                       <Import prankArr = {props.prankArr} addPrank = {props.addPrank}/>
