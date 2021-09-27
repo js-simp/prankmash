@@ -20,11 +20,13 @@ function App() {
 
   useEffect(() => {
     db.collection("pranks").get().then((querySnapshot) => {
+      //get the array of pranks
       let prankArr = querySnapshot.docs.map((doc) => {
           // doc.data() is never undefined for query doc snapshots
           // console.log("New Array being generated!")
           return doc.data();
       });
+      //rearrange the order of the pranks using shuffle.js
       setPranks(shuffle(prankArr));
   });
   }, [])
