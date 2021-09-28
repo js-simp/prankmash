@@ -10,12 +10,13 @@ function BattleMash(props) {
     
     //h2h pranks that go head to head ( contenders)
     const [h2h, setH2h] = useState([0,1])
+    
     // updating the rating after the vote
     // function giveRating(event,prankArr){// testing purposes
     
-    function giveRating(prankindex , prankArr){
+    function giveRating(prankindex , prankArr, setClick){
         // // console.log(clicked);
-        // setClick("active");
+        setClick("active");
         //first we need to identify the index that won and the index of gif that lost
         console.log(prankindex);
         let winIndex = prankindex
@@ -63,7 +64,7 @@ function BattleMash(props) {
                 });
                 
             }
-            // setClick(null)
+            setClick('')
         })
 
         //now we have to load the next two indices into the arena
